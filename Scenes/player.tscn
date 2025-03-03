@@ -69,6 +69,5 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -3)
 sprite_frames = SubResource("SpriteFrames_6b2xe")
-animation = &"back"
-autoplay = "back"
-frame_progress = 0.117716
+animation = &"left_right"
+autoplay = "left_right"
