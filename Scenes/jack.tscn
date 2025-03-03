@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtq8xdge8qyr5"]
+
+[ext_resource type="Texture2D" uid="uid://bte6b7ogmuyar" path="res://Assets/JackSpriteSheet.png" id="1_15w1u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1v8k"]
+atlas = ExtResource("1_15w1u")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0gw8"]
+atlas = ExtResource("1_15w1u")
+region = Rect2(0, 64, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sv8tp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1v8k")
+}],
+"loop": true,
+"name": &"fight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0gw8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Jack" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sv8tp")
+animation = &"fight"
+autoplay = "fight"
