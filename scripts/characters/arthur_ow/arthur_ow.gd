@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		if input.length() > 0:  # Ensure there is movement
 			
 			if abs(input.x) > abs(input.y):  # (x is dominant)
-				#flip image
+				animated_sprite.flip_h = (input.x > 0)
 				animated_sprite.play("walk_left_right")
 			elif input.y < 0:  # (negative y)
 				animated_sprite.play("walk_back")
