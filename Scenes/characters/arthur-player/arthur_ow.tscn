@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5snj0tmmmlyu"]
+
+[ext_resource type="Script" path="res://scripts/characters/arthur_ow/arthur_ow.gd" id="1_augru"]
+[ext_resource type="Texture2D" uid="uid://dsfnpfpc4ytj0" path="res://Assets/ArthurSpriteSheet.PNG" id="1_fhxub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_julp6"]
+atlas = ExtResource("1_fhxub")
+region = Rect2(32, 0, 16, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu3vt"]
+atlas = ExtResource("1_fhxub")
+region = Rect2(48, 0, 16, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee47e"]
+atlas = ExtResource("1_fhxub")
+region = Rect2(64, 0, 16, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5ha0"]
+atlas = ExtResource("1_fhxub")
+region = Rect2(80, 0, 16, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pk1p"]
+atlas = ExtResource("1_fhxub")
+region = Rect2(0, 0, 16, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw5vd"]
+atlas = ExtResource("1_fhxub")
+region = Rect2(16, 0, 16, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptcen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_julp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu3vt")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee47e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5ha0")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pk1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw5vd")
+}],
+"loop": true,
+"name": &"walk_left_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65fya"]
+size = Vector2(18, 33)
+
+[node name="Arthur_ow" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_augru")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 4)
+sprite_frames = SubResource("SpriteFrames_ptcen")
+animation = &"walk_left_right"
+frame_progress = 0.426222
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_65fya")
